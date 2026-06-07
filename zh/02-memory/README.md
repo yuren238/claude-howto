@@ -91,6 +91,71 @@ Claude 会按更接近当前上下文的规则优先使用更具体的 memory。
 3. 本地设置
 4. 临时会话输入
 
+🆕 **详细的设置文件层级（五级）：**
+
+| 级别 | 位置 | 作用范围 |
+|------|------|---------|
+| 1（最高） | 托管策略（系统级） | 组织范围强制执行 |
+| 2 | `managed-settings.d/`（v2.1.83+） | 模块化策略文件，按字母顺序合并 |
+| 3 | `.claude/settings.local.json` | 本地覆盖（git 忽略） |
+| 4 | `.claude/settings.json` | 项目级（提交到 git） |
+| 5（最低） | `~/.claude/settings.json` | 用户偏好 |
+
+🆕 **平台特定配置（v2.1.51+）：**
+
+设置还可以通过以下方式配置：
+- **macOS**：属性列表（plist）文件
+- **Windows**：Windows 注册表
+
+这些平台原生机制与 JSON 设置文件一起读取，并遵循相同的优先级规则。
+
+🆕 **注意（v2.1.119）**：`/config` 更改现在会持久化到 `~/.claude/settings.json`。通过 `/config` 写入的值参与上述正常的策略/本地/项目优先级链 — 它们不再是仅会话的。使用 `/config` 进行交互式编辑，直接编辑 `settings.json` 文件进行脚本化或托管配置。🆕
+
+### 🆕 保留和清理设置 🆕
+
+| 设置 | 类型 | 默认值 | 描述 |
+|------|------|--------|------|
+| `cleanupPeriodDays` | 整数（天） | 30 | 磁盘工件的保留窗口。**自 v2.1.117 起**，它适用于以下四种：checkpoints（`~/.claude/checkpoints/`）、tasks（`~/.claude/tasks/`）、shell-snapshots（`~/.claude/shell-snapshots/`）和 backups（`~/.claude/backups/`）。超过窗口的文件在启动时会被清理。 |
+
+```jsonc
+// ~/.claude/settings.json
+{
+  "cleanupPeriodDays": 14
+}
+```
+
+### 🆕 归因、语音和 PR URL 设置 🆕
+
+| 设置 | 类型 | 描述 |
+|------|------|------|
+| `attribution.commit` | 布尔值 | 在 Claude 创建的提交中添加 `Co-Authored-By: Claude` 尾注。替代已弃用的 `includeCoAuthoredBy` 标志。 |
+| `attribution.pr` | 布尔值 | 在 PR 描述中添加 Claude 归因。替代已弃用的 `includeCoAuthoredBy` 标志（用于 PR）。 |
+| `voice.enabled` | 布尔值 | 启用按住说话语音听写（`/voice`）。替代已弃用的 `voiceEnabled` 标志。 |
+| `prUrlTemplate` | 字符串 | **v2.1.119 新增。** PR 徽章页脚的自定义 URL 模板；适用于 GitLab、Bitbucket 或内部代码审查平台。支持 `{{owner}}`、`{{repo}}` 和 `{{number}}` 占位符。 |
+
+```jsonc
+// ~/.claude/settings.json
+{
+  "attribution": {
+    "commit": false,
+    "pr": true
+  },
+  "voice": {
+    "enabled": true
+  },
+  "prUrlTemplate": "https://gitlab.internal/{{owner}}/{{repo}}/-/merge_requests/{{number}}"
+}
+```
+
+🆕 **已弃用的设置名称：**
+
+以下旧设置键仍然有效但已弃用。请优先使用上述替代方案。
+
+| 已弃用的键 | 替代方案 | 备注 |
+|-----------|---------|------|
+| `includeCoAuthoredBy` | `attribution.commit` / `attribution.pr` | 旧的单个标志被拆分为单独的提交和 PR 开关。使用旧版安装的用户可以保留旧键；新项目应使用嵌套形式。 |
+| `voiceEnabled` | `voice.enabled` | 归入 `voice` 命名空间，与未来语音相关选项一起。 |
+
 ## 模块化规则系统
 
 Memory 不一定要写成一个巨大文件。你可以把规则拆成多个目录文件，再按路径组织。
@@ -111,11 +176,20 @@ description: API development rules
 
 ## Memory 位置表
 
-常见位置包括：
+🆕 **详细的 Memory 位置表：** 🆕
 
-- 项目根目录的 `CLAUDE.md`
-- 用户目录的 `~/.claude/CLAUDE.md`
-- 子目录的 `CLAUDE.md`
+| 位置 | 作用范围 | 优先级 | 共享 | 访问 | 最适合 |
+|------|---------|--------|------|------|--------|
+| `/Library/Application Support/ClaudeCode/CLAUDE.md`（macOS） | 托管策略 | 1（最高） | 组织 | 系统 | 公司范围策略 |
+| `/etc/claude-code/CLAUDE.md`（Linux/WSL） | 托管策略 | 1（最高） | 组织 | 系统 | 组织标准 |
+| `C:\Program Files\ClaudeCode\CLAUDE.md`（Windows） | 托管策略 | 1（最高） | 组织 | 系统 | 企业指南 |
+| `managed-settings.d/*.md`（策略旁边） | 托管 Drop-ins | 1.5 | 组织 | 系统 | 模块化策略文件（v2.1.83+） |
+| `./CLAUDE.md` 或 `./.claude/CLAUDE.md` | 项目记忆 | 2 | 团队 | Git | 团队标准、共享架构 |
+| `./.claude/rules/*.md` | 项目规则 | 3 | 团队 | Git | 路径特定、模块化规则 |
+| `~/.claude/CLAUDE.md` | 用户记忆 | 4 | 个人 | 文件系统 | 个人偏好（所有项目） |
+| `~/.claude/rules/*.md` | 用户规则 | 5 | 个人 | 文件系统 | 个人规则（所有项目） |
+| `./CLAUDE.local.md` | 项目本地 | 6 | 个人 | Git（忽略） | 个人项目特定偏好 |
+| `~/.claude/projects/<project>/memory/` | Auto Memory | 7（最低） | 个人 | 文件系统 | Claude 的自动笔记和学习 |
 
 ## Memory 更新生命周期
 
@@ -132,6 +206,41 @@ Auto memory 让 Claude 根据当前目录自动寻找并加载合适的记忆文
 ### 工作方式
 
 Claude 会根据当前工作目录、父目录和已配置路径，逐层查找相关 memory。
+
+🆕 **Auto Memory 架构图：** 🆕
+
+```mermaid
+graph TD
+    A["Claude 会话开始"] --> B["加载 MEMORY.md<br/>（前 200 行 / 25KB）"]
+    B --> C["会话激活"]
+    C --> D["Claude 发现<br/>模式和洞察"]
+    D --> E{"写入<br/>auto memory"}
+    E -->|一般笔记| F["MEMORY.md"]
+    E -->|特定主题| G["debugging.md"]
+    E -->|特定主题| H["api-conventions.md"]
+    C --> I["按需加载<br/>主题文件"]
+    I --> C
+
+    style A fill:#e1f5fe,stroke:#333,color:#333
+    style B fill:#e1f5fe,stroke:#333,color:#333
+    style C fill:#e8f5e9,stroke:#333,color:#333
+    style D fill:#f3e5f5,stroke:#333,color:#333
+    style E fill:#fff3e0,stroke:#333,color:#333
+    style F fill:#fce4ec,stroke:#333,color:#333
+    style G fill:#fce4ec,stroke:#333,color:#333
+    style H fill:#fce4ec,stroke:#333,color:#333
+    style I fill:#f3e5f5,stroke:#333,color:#333
+```
+
+🆕 **Auto Memory 目录结构：** 🆕
+
+```text
+~/.claude/projects/<project>/memory/
+├── MEMORY.md              # 入口文件（启动时加载前 200 行 / 25KB）
+├── debugging.md           # 主题文件（按需加载）
+├── api-conventions.md     # 主题文件（按需加载）
+└── testing-patterns.md    # 主题文件（按需加载）
+```
 
 ### 目录结构
 
