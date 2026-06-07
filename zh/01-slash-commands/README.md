@@ -116,6 +116,66 @@ Claude Code 目前提供 55+ 个内置命令和 5 个内置 Skills。你可以�
 - `/model` 选择器现在显示人类可读标签，例如 “Sonnet 4.6”
 - `/resume` 支持 `/continue` 别名
 - MCP prompts 可作为 `/mcp__<server>__<prompt>` 命令使用，见 [MCP Prompts as Commands](#mcp-prompts-作为命令)
+🆕 - `/pr-comments` 在 v2.1.91 中移除 — 直接让 Claude 查看 PR 评论 🆕
+🆕 - `/vim` 在 v2.1.92 中移除 — 改用 `/config → Editor mode` 🆕
+🆕 - 新增 `/ultraplan`，用于基于浏览器的计划审查和执行 🆕
+🆕 - 新增 `/powerup`，用于交互式功能课程 🆕
+🆕 - 新增 `/sandbox`，用于切换沙盒模式 🆕
+🆕 - 新增 `/team-onboarding`，用于自动生成队友入职指南（v2.1.101）🆕
+🆕 - 新增 `/tui`，用于无闪烁全屏 TUI 渲染（v2.1.110）🆕
+🆕 - 新增 `/focus`，用于切换焦点视图；`Ctrl+O` 现在只切换详细 transcript（v2.1.110）🆕
+🆕 - 新增 `/recap`，用于手动触发会话上下文回顾（v2.1.108）🆕
+🆕 - 新增 `/undo` 作为 `/rewind` 的别名（v2.1.108）🆕
+🆕 - 新增 `/proactive` 作为 `/loop` 的别名（v2.1.105）🆕
+🆕 - `/effort` 新增交互式箭头键滑块和新的 `xhigh` 级别（介于 `high` 和 `max` 之间）；默认 effort 提升到 `xhigh`（v2.1.111）。在 Opus 4.8 上默认为 `high`（v2.1.154）🆕
+🆕 - 新增 `/ultrareview`，用于全面的基于云的多代理代码审查（v2.1.111）🆕
+🆕 - 新增 `/less-permission-prompts`，用于分析 Bash/MCP 工具调用并通过 `.claude/settings.json` 中的允许列表减少权限提示（v2.1.111）🆕
+🆕 - Auto 模式不再需要 `--enable-auto-mode` 标志（v2.1.112）🆕
+🆕 - 新增 `/goal` — 会话级完成条件，Claude 跨轮次工作；实时覆盖显示 elapsed time、轮次和 token 使用量（v2.1.139）🆕
+🆕 - 新增 `/scroll-speed` — 调整 TUI 实时预览窗格的鼠标滚轮滚动速度；按机器持久化（v2.1.139）🆕
+🆕 - 新增 `/reload-skills` — 无需重启会话即可重新扫描 skill 目录（v2.1.152）🆕
+🆕 - `/model` 现在将选择的模型保存为新会话的默认值；按 `s` 仅当前会话（v2.1.153）🆕
+🆕 - 新增 `/workflows` — 查看正在运行和已完成的动态工作流运行（v2.1.154）🆕
+🆕 - `/simplify` 作为独立的清理审查命令回归（重用/简化/效率/高度），与 `/code-review` 的 bug 搜索分开（v2.1.154）🆕
+
+### `/goal` — 会话级完成条件
+
+> **🆕 新增于 v2.1.139** 🆕
+
+使用 `/goal` 为当前会话注册完成条件。Claude 会跨轮次工作，覆盖面板会显示 elapsed time、轮次和 token 使用量。使用 `/goal clear` 清除。适用于交互模式、`claude -p` 和 Remote Control。
+
+```
+用户：/goal 将 payments 服务从 REST 迁移到 gRPC 并让集成测试通过。
+Claude：目标已注册。我会持续工作直到你清除它。
+[目标面板：⏱ 0s · 轮次 0 · tokens 0]
+
+用户：先列出 REST 端点
+Claude：[执行工作，面板更新]
+```
+
+### `/team-onboarding` — 队友入职指南
+
+> **🆕 新增于 v2.1.101** 🆕
+
+使用 `/team-onboarding` 从项目的本地 Claude Code 使用情况生成队友入职指南。该命令会检查你的 `CLAUDE.md`、已安装的 skills、subagents、hooks 和最近的工作流，然后生成一份入职文档，帮助新开发者快速上手。
+
+这是内置命令 — 无需安装。
+
+**用法：**
+
+```bash
+claude /team-onboarding
+```
+
+生成的指南会总结：
+
+- 项目目的和 [`CLAUDE.md`](../02-memory/README.md) 中的关键规范
+- 可用的 [skills](../03-skills/README.md) 及其自动触发时机
+- 已配置的 [subagents](../04-subagents/README.md) 及其职责
+- 常见事件上运行的 [hooks](../06-hooks/README.md)
+- 新手应该了解的常见工作流
+
+**可用性：** Claude Code v2.1.101（2026 年 4 月 11 日）。
 
 ## 自定义命令（现已归入 Skills）
 
