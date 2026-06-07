@@ -548,8 +548,9 @@ allowed-tools: Bash(npm *), Bash(git *)
 
 ---
 
-**最后更新**: 2026 年 4 月 9 日
-**Claude Code 版本**: 2.1.97
+**最后更新**: ❌ ~~2026 年 4 月 9 日~~ ✅ 2026 年 6 月 ✅
+**Claude Code 版本**: ❌ ~~2.1.97~~ ✅ 2.1.160 ✅
+**兼容模型**: ✅ Claude Sonnet 4.6、Claude Opus 4.8、Claude Haiku 4.5 ✅
 
 ---
 

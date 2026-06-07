@@ -290,3 +290,9 @@ Checkpoints 和 git 是互补关系：
 ## 总结
 
 Checkpoints 的价值在于让你敢于试错。它让“先试再说”和“试错后立刻回退”变得安全，从而帮你更快找到正确方案。
+
+---
+
+**最后更新**: ✅ 2026 年 6 月 ✅
+**Claude Code 版本**: ✅ 2.1.160 ✅
+**兼容模型**: ✅ Claude Sonnet 4.6、Claude Opus 4.8、Claude Haiku 4.5 ✅

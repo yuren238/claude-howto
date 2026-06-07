@@ -96,3 +96,9 @@ Hooks 会在匹配到事件时自动执行。你可以把它理解成 Claude Cod
 - [Memory Guide](../02-memory/README.md)
 - [Official Hooks Documentation](https://code.claude.com/docs/en/hooks)
 - [CLI Reference](https://code.claude.com/docs/en/cli-reference)
+
+---
+
+**最后更新**: ✅ 2026 年 6 月 ✅
+**Claude Code 版本**: ✅ 2.1.160 ✅
+**兼容模型**: ✅ Claude Sonnet 4.6、Claude Opus 4.8、Claude Haiku 4.5 ✅

@@ -638,3 +638,9 @@ claude --working-directory ./backend --mcp-config ./mcp.json
 - [Slash Commands 中文参考](../01-slash-commands/README.md)
 - [MCP 文档](../05-mcp/README.md)
 - [Claude Code 官方 CLI 文档](https://code.claude.com/docs/en/cli-reference)
+
+---
+
+**最后更新**: ✅ 2026 年 6 月 ✅
+**Claude Code 版本**: ✅ 2.1.160 ✅
+**兼容模型**: ✅ Claude Sonnet 4.6、Claude Opus 4.8、Claude Haiku 4.5 ✅

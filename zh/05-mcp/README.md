@@ -340,3 +340,9 @@ Claude 通过工具调用从外部系统取回需要的数据，而不是把所�
 
 - [根目录中文指南](../README.md)
 - [MCP 规范](https://modelcontextprotocol.io)
+
+---
+
+**最后更新**: ✅ 2026 年 6 月 ✅
+**Claude Code 版本**: ✅ 2.1.160 ✅
+**兼容模型**: ✅ Claude Sonnet 4.6、Claude Opus 4.8、Claude Haiku 4.5 ✅

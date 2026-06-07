@@ -269,3 +269,9 @@ chmod +x ~/.claude/skills/*/scripts/*
 - [Slash Commands 中文参考](../01-slash-commands/README.md)
 - [Memory 中文指南](../02-memory/README.md)
 - [Subagents 中文参考](../04-subagents/README.md)
+
+---
+
+**最后更新**: ✅ 2026 年 6 月 ✅
+**Claude Code 版本**: ✅ 2.1.160 ✅
+**兼容模型**: ✅ Claude Sonnet 4.6、Claude Opus 4.8、Claude Haiku 4.5 ✅

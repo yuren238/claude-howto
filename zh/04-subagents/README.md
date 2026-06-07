@@ -378,3 +378,9 @@ cp 04-subagents/*.md ~/.claude/agents/
 - [Memory 中文指南](../02-memory/README.md)
 - [Hooks 中文指南](../06-hooks/README.md)
 - [Plugins 中文指南](../07-plugins/README.md)
+
+---
+
+**最后更新**: ✅ 2026 年 6 月 ✅
+**Claude Code 版本**: ✅ 2.1.160 ✅
+**兼容模型**: ✅ Claude Sonnet 4.6、Claude Opus 4.8、Claude Haiku 4.5 ✅
