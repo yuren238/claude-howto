@@ -12,10 +12,12 @@
 [![GitHub Stars](https://img.shields.io/github/stars/luongnv89/claude-howto?style=flat&color=gold)](https://github.com/luongnv89/claude-howto/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/luongnv89/claude-howto?style=flat)](https://github.com/luongnv89/claude-howto/network/members)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-2.1.160-brightgreen)](CHANGELOG.md) <!-- 新增：版本号从 2.1.112 更新到 2.1.160 -->
+<!-- 🔴 修改：版本号 -->
+<!-- 原始内容：[![Version](https://img.shields.io/badge/version-2.1.112-brightgreen)](CHANGELOG.md) -->
+[![Version](https://img.shields.io/badge/version-2.1.160-brightgreen)](CHANGELOG.md)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-2.1+-purple)](https://code.claude.com)
 
-<!-- 新增：语言切换链接 -->
+<!-- 🟢 新增：语言切换链接（英文版有，中文版原无） -->
 🌐 **Language / Ngôn ngữ / 语言 / Мова:** [English](../README.md) | [Tiếng Việt](../vi/README.md) | [中文](README.md) | [Українська](../uk/README.md) | [日本語](../ja/README.md)
 
 # 用一个周末掌握 Claude Code
@@ -103,7 +105,9 @@
 
 - **GitHub stars**，来自每天都在使用 Claude Code 的开发者
 - **Forks**，许多团队已将这份指南改造成自己的工作流版本
-- **持续维护中**，会与每次 Claude Code 发布保持同步（最新版本：v2.1.160，2026 年 6 月） <!-- 新增：版本和日期更新 -->
+<!-- 🔴 修改：版本和日期 -->
+<!-- 原始内容：- **持续维护中**，会与每次 Claude Code 发布保持同步（最新版本：v2.1.112，2026 年 4 月） -->
+- **持续维护中**，会与每次 Claude Code 发布保持同步（最新版本：v2.1.160，2026 年 6 月）
 - **社区驱动**，贡献者会分享他们在真实工作中的配置和经验
 
 [![Star History Chart](https://api.star-history.com/svg?repos=luongnv89/claude-howto&type=Date)](https://star-history.com/#luongnv89/claude-howto&Date)
@@ -141,8 +145,8 @@
 
 ## 15 分钟快速上手
 
+<!-- 🟢 新增：安装说明段落（英文版有，中文版原无） -->
 > **安装说明**：从 v2.1.113 开始，Claude Code 以原生平台二进制文件（macOS/Linux/Windows）形式发布。`npm install -g @anthropic-ai/claude-code` 仍然可用——原生二进制文件会在首次使用时作为可选依赖下载。从 v2.1.116 开始，下载源为 `https://downloads.claude.ai/claude-code-releases`——企业代理必须将此主机加入白名单。
-> <!-- 新增：安装说明段落 -->
 
 ```bash
 # 1. 克隆这份指南
@@ -203,7 +207,9 @@ cp -r 03-skills/code-review-specialist ~/.claude/skills/
 是的。MIT 许可证，永久免费。你可以将它用于个人项目、工作项目或团队中，唯一要求只是保留许可证声明。
 
 **它有人维护吗？**
-是的，而且持续维护。该指南会与每次 Claude Code 发布同步。当前版本是 v2.1.160（2026 年 6 月），兼容 Claude Code 2.1+。 <!-- 新增：版本和日期更新 -->
+<!-- 🔴 修改：版本和日期 -->
+<!-- 原始内容：是的，而且持续维护。该指南会与每次 Claude Code 发布同步。当前版本是 v2.1.112（2026 年 4 月），兼容 Claude Code 2.1+。 -->
+是的，而且持续维护。该指南会与每次 Claude Code 发布同步。当前版本是 v2.1.160（2026 年 6 月），兼容 Claude Code 2.1+。
 
 **它和官方文档有什么不同？**
 官方文档是功能参考手册；这份指南则是教程，包含图示、生产级模板和渐进式学习路径。两者是互补关系，建议先用本指南学习，再在需要具体细节时查官方文档。
@@ -212,7 +218,9 @@ cp -r 03-skills/code-review-specialist ~/.claude/skills/
 完整路径大约需要 11 到 13 小时。但你在 15 分钟内就能获得直接收益，只要复制一个 slash command 模板并试用即可。
 
 **我可以搭配 Claude Sonnet / Haiku / Opus 使用吗？**
-可以。所有模板都适用于 Claude Sonnet 4.6、Claude Opus 4.8 和 Claude Haiku 4.5。 <!-- 新增：Opus 版本从 4.6 更新到 4.8 -->
+<!-- 🔴 修改：Opus 版本 -->
+<!-- 原始内容：可以。所有模板都适用于 Claude Sonnet 4.6、Claude Opus 4.6 和 Claude Haiku 4.5。 -->
+可以。所有模板都适用于 Claude Sonnet 4.6、Claude Opus 4.8 和 Claude Haiku 4.5。
 
 **我可以参与贡献吗？**
 当然可以。请查看 [CONTRIBUTING.md](CONTRIBUTING.md) 了解贡献规范。我们欢迎新的示例、bug 修复、文档改进以及社区模板。
@@ -882,6 +890,12 @@ MIT 许可证，详见 [LICENSE](LICENSE)。你可以自由使用、修改和分
 
 ---
 
+<!-- 🔴 修改：日期和模型版本 -->
+<!-- 原始内容：
+**最后更新**：2026 年 3 月
+**Claude Code 版本**：2.1+
+**兼容模型**：Claude Sonnet 4.6、Claude Opus 4.6、Claude Haiku 4.5
+-->
 **最后更新**：2026 年 6 月
 **Claude Code 版本**：2.1+
-**兼容模型**：Claude Sonnet 4.6、Claude Opus 4.8、Claude Haiku 4.5 <!-- 新增：日期和模型版本更新 -->
+**兼容模型**：Claude Sonnet 4.6、Claude Opus 4.8、Claude Haiku 4.5
