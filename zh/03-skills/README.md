@@ -112,6 +112,12 @@ Skills 支持 `$ARGUMENTS`、`$0`、`$1` 等参数替换。
 - 当前分支：!`git branch --show-current`
 ```
 
+🆕 **Pull request 上下文：** 🆕
+
+- PR diff：!`gh pr diff`
+- PR 评论：!`gh pr view --comments`
+- 变更的文件：!`gh pr diff --name-only`
+
 ## 在 subagent 中运行 Skills
 
 某些 skill 适合在隔离上下文中运行，这样可以降低对主会话的影响。
@@ -263,12 +269,22 @@ chmod +x ~/.claude/skills/*/scripts/*
 
 如果你要管理一整套 Skills，可以再做一个 skill collection 或 skill manager，用来统一发现、更新和分发。
 
+🆕 **推荐的 Skill 资源：** 🆕
+
+**[luongnv89/skills](https://github.com/luongnv89/skills)** — 我在几乎所有项目中日常使用的 skills 集合。亮点包括 `logo-designer`（即时生成项目 logo）和 `ollama-optimizer`（为你的硬件调优本地 LLM 性能）。如果你想获得即用型 skills，这是很好的起点。
+
+**[luongnv89/asm](https://github.com/luongnv89/asm)** — Agent Skill Manager。处理 skill 开发、重复检测和测试。`asm link` 命令让你可以在任何项目中测试 skill，无需复制文件 — 当你有超过少量 skills 时，这是必不可少的。
+
 ## 更多资源
 
-- [根目录中文指南](../README.md)
-- [Slash Commands 中文参考](../01-slash-commands/README.md)
-- [Memory 中文指南](../02-memory/README.md)
-- [Subagents 中文参考](../04-subagents/README.md)
+- [官方 Skills 文档](https://code.claude.com/docs/en/skills)
+- [Agent Skills 架构博客](https://claude.com/blog/equipping-agents-for-the-real-world-with-agent-skills)
+- [Skills 仓库](https://github.com/luongnv89/skills) - 即用型 skills 集合
+- [Slash Commands 指南](../01-slash-commands/) - 用户发起的快捷命令
+- [Subagents 指南](../04-subagents/) - 委派式 AI agents
+- [Memory 指南](../02-memory/) - 持久上下文
+- [MCP（Model Context Protocol）](../05-mcp/) - 实时外部数据
+- [Hooks 指南](../06-hooks/) - 事件驱动自动化
 
 ---
 
