@@ -891,3 +891,9 @@ MIT 许可证，详见 [LICENSE](LICENSE)。你可以自由使用、修改和分
 **最后更新**：❌ ~~2026 年 3 月~~ ✅ 2026 年 6 月 ✅
 **Claude Code 版本**：2.1+
 **兼容模型**：Claude Sonnet 4.6、❌ ~~Claude Opus 4.6~~ ✅ Claude Opus 4.8 ✅、Claude Haiku 4.5
+🆕 **来源**：
+- https://code.claude.com/docs/en/overview
+- https://code.claude.com/docs/en/changelog
+- https://platform.claude.com/docs/en/about-claude/models/overview
+- https://github.com/anthropics/claude-code/releases
+- https://github.com/anthropics/claude-code/releases/tag/v2.1.154 🆕
