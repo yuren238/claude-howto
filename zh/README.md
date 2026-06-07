@@ -12,8 +12,11 @@
 [![GitHub Stars](https://img.shields.io/github/stars/luongnv89/claude-howto?style=flat&color=gold)](https://github.com/luongnv89/claude-howto/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/luongnv89/claude-howto?style=flat)](https://github.com/luongnv89/claude-howto/network/members)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-❌ ~~[![Version](https://img.shields.io/badge/version-2.1.112-brightgreen)](CHANGELOG.md)~~
-✅ **[![Version](https://img.shields.io/badge/version-2.1.160-brightgreen)](CHANGELOG.md)**
+---
+**📝 修改：版本号**
+- ❌ ~~[![Version](https://img.shields.io/badge/version-2.1.112-brightgreen)](CHANGELOG.md)~~
+- ✅ **[![Version](https://img.shields.io/badge/version-2.1.160-brightgreen)](CHANGELOG.md)**
+---
 [![Claude Code](https://img.shields.io/badge/Claude_Code-2.1+-purple)](https://code.claude.com)
 
 **🆕 新增：语言切换链接**（英文版有，中文版原无）
@@ -105,8 +108,11 @@
 
 - **GitHub stars**，来自每天都在使用 Claude Code 的开发者
 - **Forks**，许多团队已将这份指南改造成自己的工作流版本
-❌ ~~**持续维护中**，会与每次 Claude Code 发布保持同步（最新版本：v2.1.112，2026 年 4 月）~~
-✅ **持续维护中**，会与每次 Claude Code 发布保持同步（最新版本：v2.1.160，2026 年 6 月）
+---
+**📝 修改：版本和日期**
+- ❌ ~~**持续维护中**，会与每次 Claude Code 发布保持同步（最新版本：v2.1.112，2026 年 4 月）~~
+- ✅ **持续维护中**，会与每次 Claude Code 发布保持同步（最新版本：v2.1.160，2026 年 6 月）
+---
 - **社区驱动**，贡献者会分享他们在真实工作中的配置和经验
 
 [![Star History Chart](https://api.star-history.com/svg?repos=luongnv89/claude-howto&type=Date)](https://star-history.com/#luongnv89/claude-howto&Date)
@@ -208,8 +214,11 @@ cp -r 03-skills/code-review-specialist ~/.claude/skills/
 
 **它有人维护吗？**
 
-❌ ~~是的，而且持续维护。该指南会与每次 Claude Code 发布同步。当前版本是 v2.1.112（2026 年 4 月），兼容 Claude Code 2.1+。~~
-✅ **是的，而且持续维护。该指南会与每次 Claude Code 发布同步。当前版本是 v2.1.160（2026 年 6 月），兼容 Claude Code 2.1+。**
+---
+**📝 修改：版本和日期**
+- ❌ ~~是的，而且持续维护。该指南会与每次 Claude Code 发布同步。当前版本是 v2.1.112（2026 年 4 月），兼容 Claude Code 2.1+。~~
+- ✅ **是的，而且持续维护。该指南会与每次 Claude Code 发布同步。当前版本是 v2.1.160（2026 年 6 月），兼容 Claude Code 2.1+。**
+---
 
 **它和官方文档有什么不同？**
 官方文档是功能参考手册；这份指南则是教程，包含图示、生产级模板和渐进式学习路径。两者是互补关系，建议先用本指南学习，再在需要具体细节时查官方文档。
@@ -219,8 +228,11 @@ cp -r 03-skills/code-review-specialist ~/.claude/skills/
 
 **我可以搭配 Claude Sonnet / Haiku / Opus 使用吗？**
 
-❌ ~~可以。所有模板都适用于 Claude Sonnet 4.6、Claude Opus 4.6 和 Claude Haiku 4.5。~~
-✅ **可以。所有模板都适用于 Claude Sonnet 4.6、Claude Opus 4.8 和 Claude Haiku 4.5。**
+---
+**📝 修改：Opus 版本**
+- ❌ ~~可以。所有模板都适用于 Claude Sonnet 4.6、Claude Opus 4.6 和 Claude Haiku 4.5。~~
+- ✅ **可以。所有模板都适用于 Claude Sonnet 4.6、Claude Opus 4.8 和 Claude Haiku 4.5。**
+---
 
 **我可以参与贡献吗？**
 当然可以。请查看 [CONTRIBUTING.md](CONTRIBUTING.md) 了解贡献规范。我们欢迎新的示例、bug 修复、文档改进以及社区模板。
@@ -890,6 +902,10 @@ MIT 许可证，详见 [LICENSE](LICENSE)。你可以自由使用、修改和分
 
 ---
 
-**最后更新**：❌ ~~2026 年 3 月~~ ✅ **2026 年 6 月**
-**Claude Code 版本**：2.1+
-**兼容模型**：Claude Sonnet 4.6、❌ ~~Claude Opus 4.6~~ ✅ **Claude Opus 4.8**、Claude Haiku 4.5
+---
+**📝 修改：日期和模型版本**
+- ❌ ~~**最后更新**：2026 年 3 月~~
+- ✅ **最后更新**：2026 年 6 月
+- ❌ ~~**兼容模型**：Claude Sonnet 4.6、Claude Opus 4.6、Claude Haiku 4.5~~
+- ✅ **兼容模型**：Claude Sonnet 4.6、Claude Opus 4.8、Claude Haiku 4.5
+---
